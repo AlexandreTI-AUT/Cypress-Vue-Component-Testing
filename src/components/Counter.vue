@@ -1,8 +1,8 @@
 <template>
   <div>
     <h1>Counter: {{ counter }}</h1>
-    <button @click="decrement">Decrement</button>
-    <button @click="increment">Increment</button>
+    <button cy-data="button-decrement" id="btnDecrement" @click="decrement">Decrement</button>
+    <button cy-data="button-increment" id="btnIncrement" @click="increment">Increment</button>
   </div>
 </template>
 

@@ -2,7 +2,7 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-    <Counter :msg= "'Testando Cypress/Vue'">
+    <Counter :msg= "'Testando Cypress/Vue'"></Counter>
   </div>
 </template>
 
