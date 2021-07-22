@@ -6,9 +6,10 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue';
 import { mapGetters, mapActions } from "vuex";
-export default {
+export default Vue.extend({
   name: "Counter",
   computed: {
     ...mapGetters(["counter"]),
@@ -16,6 +17,6 @@ export default {
   methods: {
     ...mapActions(["decrement", "increment"]),
   },
-};
+});
 </script>
 

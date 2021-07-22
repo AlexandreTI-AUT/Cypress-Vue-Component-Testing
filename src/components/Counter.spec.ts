@@ -1,4 +1,4 @@
-import Counter from './Counter.vue'
+import Counter from '@/components/Counter.vue'
 import Vuex from "vuex";
 import { shallowMount, createLocalVue } from "@vue/test-utils";
 import { mount } from '@cypress/vue/dist';
@@ -23,20 +23,17 @@ describe('Counter', () => {
     },
     actions
   });
-  beforeEach(() => {
-    wrapper = shallowMount(Counter, {
-      store,
-      localVue
-    });
-  });
+
+  // it("Visits the app root url", () => {
+  //   cy.visit("http://localhost:8081");
+  // });
 
   it('Increment counter', () => {
-    wrapper = shallowMount(Counter, {
-      store,
-      localVue
-    });
-    cy.get('button').click()
-    cy.get('h1').should('have.text', Counter)
+    // cy.get('#btnIncrement').click();
+    // mount(Counter, {
+    //   store
+    // });
+    // cy.window().its('store').invoke('counter');
   })
 
 })
