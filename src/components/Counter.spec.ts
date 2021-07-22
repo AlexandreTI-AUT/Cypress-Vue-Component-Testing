@@ -1,24 +1,39 @@
-import { mount } from '@cypress/vue'
-import Counter from './Counter.vue'
+import Counter from '@/components/Counter.vue'
+import Vuex from "vuex";
+import { shallowMount, createLocalVue } from "@vue/test-utils";
+import { mount } from '@cypress/vue/dist';
 
-// describe('Counter', () => {
-//   it('render a message', () => {
-//     const msg = 'Testando Cypress/Vue'
-//     mount(Counter, {
-//       propsData: {
-//         msg
-//       }
-//     })
-//     cy.get('h2').should('have.text', msg)
-//   })
-// })
+const localVue = createLocalVue();
+localVue.use(Vuex);
 
 describe('Counter', () => {
-  it('Increment counter', () => {
-    mount(Counter)
-    cy.get('button').click()
-    cy.get('h1').should('have.text', Counter)
+  let state = {
+    counter: 0
+  };
+  let store: any;
+  let wrapper: any;
+  let actions = {
+    decrement: (state: any) => state.counter--,
+    increment: (state: any) => state.counter++,
+  }
+  store = new Vuex.Store({
+    state,
+    getters : {
+      counter: () => 0,
+    },
+    actions
+  });
 
+  // it("Visits the app root url", () => {
+  //   cy.visit("http://localhost:8081");
+  // });
+
+  it('Increment counter', () => {
+    // cy.get('#btnIncrement').click();
+    // mount(Counter, {
+    //   store
+    // });
+    // cy.window().its('store').invoke('counter');
   })
 
 })

@@ -1,14 +1,15 @@
 <template>
   <div>
     <h1>Counter: {{ counter }}</h1>
-    <button @click="decrement">Decrement</button>
-    <button @click="increment">Increment</button>
+    <button cy-data="button-decrement" id="btnDecrement" @click="decrement">Decrement</button>
+    <button cy-data="button-increment" id="btnIncrement" @click="increment">Increment</button>
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue';
 import { mapGetters, mapActions } from "vuex";
-export default {
+export default Vue.extend({
   name: "Counter",
   computed: {
     ...mapGetters(["counter"]),
@@ -16,6 +17,6 @@ export default {
   methods: {
     ...mapActions(["decrement", "increment"]),
   },
-};
+});
 </script>
 
