@@ -1,11 +1,17 @@
+/// <reference types="Cypress" />
+
 describe("App", () => {
-    it("Visits the app root url", () => {
-        cy.visit("http://localhost:8081");
+
+    beforeEach(()=>{
+        cy.visit("/")
+    })
+
+    it("Counter Increment", () => {
+        
         cy.get("#btnIncrement").click();
         cy.get("#btnIncrement").click();
 
         cy.get("#btnIncrement").click();
-
         cy.get("#btnIncrement").click();
 
         cy.get("#btnIncrement").click();
@@ -21,4 +27,26 @@ describe("App", () => {
 
         cy.contains("h1", "Counter: 10");
     });
+
+    it('Counter Decrement', ()=>{
+
+        cy.get("#btnDecrement").click();
+        cy.get("#btnDecrement").click();
+        cy.get("#btnDecrement").click();
+        cy.get("#btnDecrement").click();
+        cy.get("#btnDecrement").click();
+
+        cy.contains("h1", "Counter: -5")    
+
+    })
+
+    it('Counter Increment and Decrement', ()=>{
+
+        cy.get("#btnIncrement").click();
+
+        cy.get("#btnDecrement").click();
+
+        cy.contains("h1", "Counter: 0");    
+
+    })
 });

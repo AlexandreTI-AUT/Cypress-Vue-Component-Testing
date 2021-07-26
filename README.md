@@ -4,6 +4,10 @@ Cypress Component Testing is here! Quickstart:
 2. `yarn install`
 3. `yarn cypress open-ct`
 4. Write some tests!
+5. 
+ `npm run serve`
+`./node_modules/cypress/bin/cypress open`
+
 
 ## Getting Start with Cypress Component Testing (Vue 2/3)
 
